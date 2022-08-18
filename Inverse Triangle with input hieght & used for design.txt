@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+		int height;
+		
+		cout<<"Enter height: ";
+		cin>>height;
+		cout<<endl;
+		for(int x = 1; x <height+5; x++){
+			for (int s= 5 ; s<x+8; s++){
+			cout<<" ";
+			}
+			if (x%2!=0){
+				for (int y= height+5 ; y>x; y--){
+					cout<<"& ";
+				}	
+			}	
+			cout<<"\n";
+		}
+
+    return 0;
+}

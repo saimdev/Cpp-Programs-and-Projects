@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	string arr1[5]={"Anam", "Ali", "Rehan", "Huzaifa", "Sheryar"};
+	int arr2[5][6]={{34,54,23,13,24,43},{3,21,32,65,34,64},{98,76,65,87,56,45},{98,89,97,95,85,78},{99,98,99,100,97,97}};
+	int average;
+	float percent, sum=0;
+	int avg[5], percentage[5];
+	char grades[5];
+	
+	for (int i=0; i<5; i++){
+		for (int j=0; j<6; j++){
+			sum+=arr2[i][j];
+		}
+		average=sum/6;
+		avg[i]=average;
+		sum=0;
+	}
+	
+	for (int i=0; i<5; i++){
+		if (avg[i]<50){
+			cout<<arr1[i]<<"\t"<<"Fail"<<endl;
+		}
+	}
+	cout<<endl;
+	sum=0;
+	for (int i=0; i<5; i++){
+		for (int j=0; j<6; j++){
+			sum+=arr2[i][j];
+		}
+		percent=(sum/600)*100;
+		percentage[i]=percent;
+		sum=0;
+	}
+	
+	for (int i=0; i<5; i++){
+		if (percentage[i]>=90){grades[i]='A';}
+		else if (percentage[i]>=75 and percentage[i]<90){grades[i]='B';}
+		else if (percentage[i]>=65 and percentage[i]<75){grades[i]='C';}
+		else if (percentage[i]>=50 and percentage[i]<65){grades[i]='D';}
+		else if (percentage[i]<50){grades[i]='F';}
+	}
+	
+	cout<<"Student\t\tGrade"<<endl;
+	for (int i=0; i<5; i++){
+		cout<<arr1[i]<<"\t\t"<<grades[i]<<endl;
+	}
+	
+}

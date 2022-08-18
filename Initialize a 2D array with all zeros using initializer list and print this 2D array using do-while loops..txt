@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int arr1[2][2]={0};
+	int i=0, j=0;
+	
+	do{
+		cout<<arr1[i][j]<<" ";
+		if (j==1){i++; j=0; cout<<endl;}
+		else{j++;}
+
+	}while(i<2);
+	
+	
+}

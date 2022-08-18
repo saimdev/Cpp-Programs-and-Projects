@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int binary;
+	int decimal = 0;
+	int power = 0;
+	int length;
+	int first_digit;
+	int second_digit;
+	int third_digit;
+	int fourth_digit;
+	int first_number;
+	int second_number;
+	int third_number;
+	int fourth_number;
+	int remainder1;
+	int remainder2;
+	
+	cout<<"NIBBLE(4-DIGIT) BINARY NUMBER TO DECIMAL NUMBER"<<endl;
+	cout<<endl;
+	cout<<"Enter nibble binary value: ";
+	cin>>binary;
+	
+	first_number = binary/1000;
+	remainder1 = binary%1000;
+	second_number = remainder1/100;
+	remainder2 = remainder1%100;
+	third_number = remainder2/10;
+	fourth_number = remainder2%10;	
+	
+	first_digit = first_number*(8);
+	second_digit = second_number*(2*2);
+	third_digit = third_number*(2);
+	fourth_digit = fourth_number*(1);
+	
+	cout<<"Number in Decimal = "<<first_digit+second_digit+third_digit+fourth_digit<<endl;
+	return 0;
+}

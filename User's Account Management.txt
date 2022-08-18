@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+int i=0;
+
+int main(){
+	
+	string username[100];
+	string pswrd[100];
+	char option;
+	string user, password, Pass;
+	int available_u=0, available_p=0, Length, characters=0, int_check=0, check_alphabets=0;
+	cout<<"\tUSER'S ACCOUNT MANAGEMENT"<<endl;
+	
+	while (1){
+		cout<<"a. Login\nb.Create New Account"<<endl;
+		cout<<"Choose any option (a or b): "; cin>>option;
+		
+		if (option=='a' or option=='A'){
+			cout<<"Enter Username: "; cin>>user;
+			for (int i=0; i<100; i++){
+				if (username[i]==user){available_u=1; break;}
+				else{available_u=0;}}
+			if (available_u==0){cout<<"User Not Found"<<endl<<endl;}
+			if (available_u==1){
+				cout<<"Enter Password: "; cin>>password;
+				for (int i=0; i<100; i++){
+					if (pswrd[i]==password){available_p=1; break;}
+					else{available_p=0;}}
+			if (available_p==1){cout<<"Access Granted"<<endl;}
+			else if (available_p==0){cout<<"Access Denied"<<endl<<endl;}}
+		}
+		else if (option =='b' or option=='B'){
+			cout<<"Enter any username: "; cin>>username[i];
+			cout<<"Enter Password (Including Alphabets, Numbers, Special Char): "; cin>>pswrd[i];
+			Pass=pswrd[i];
+			Length = Pass.length();
+			for (int j=0; j<Length; j++){
+				if (Pass[j]=='@' or Pass[j]=='#' or Pass[j]=='!' or Pass[j]=='~' or Pass[j]=='$' or Pass[j]=='%' or Pass[j]=='^' or Pass[j]=='&' or Pass[j]=='*' or Pass[j]=='(' or Pass[j]==')' or Pass[j]=='-' or Pass[j]=='+' or Pass[j]=='/' or Pass[j]=='?' or Pass[j]==':' or Pass[j]=='.' or Pass[j]==',' or Pass[j]=='<' or Pass[j]=='>' or Pass[j]=='|' or Pass[j]=='_'){
+				characters=1;}
+			}
+			for (int j=0; j<Length; j++){
+				if (Pass[j]=='0' or Pass[j]=='1' or Pass[j]=='2' or Pass[j]=='3' or Pass[j]=='4' or Pass[j]=='5' or Pass[j]=='6' or Pass[j]=='7' or Pass[j]=='8' or Pass[j]=='9'){
+					int_check=1;}
+			}
+			for (int j=0; j<Length; j++){
+				if ((char(Pass[j])>=65 and char(Pass[j])<=90) or (char(Pass[j])>=97 and char(Pass[j])<=122)){
+					check_alphabets=1;}
+			}
+			if (characters==1 and int_check==1 and check_alphabets==1){
+				cout<<"Strong Password"<<endl;
+			}
+			else if ((int_check==1 and check_alphabets==1) or (characters==1 and int_check==1) or (characters==1 and check_alphabets==1)){
+				cout<<"Good Password"<<endl;				
+			}
+			else if ((characters==1 and int_check==0 and check_alphabets==0) or (characters==0 and int_check==1 and check_alphabets==0) or (characters==0 and int_check==0 and check_alphabets==1)){
+				cout<<"Weak Password"<<endl;
+				cout<<"Enter Password Again (Must Include Alphabets, Numbers, Special Char): "; cin>>pswrd[i];
+			}
+			i++;
+		}	
+	}
+}

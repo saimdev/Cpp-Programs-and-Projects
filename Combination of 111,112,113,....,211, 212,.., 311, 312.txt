@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	for (int i = 1; i < 4; i++){
+		for (int j = 1; j < 4; j++){
+			cout<<i<<1<<j;
+			cout<<" ";
+		}
+		for (int x = 1; x < 4; x++){
+			cout<<i<<2<<x;
+			cout<<" ";
+		}
+		for (int y = 1; y < 4; y++){
+			cout<<i<<3<<y;
+			cout<<" ";
+		}
+		cout<<endl;
+	}
+	
+	return 0;
+}

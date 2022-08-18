@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int arr1[10]={4,76,5,3,252,64,31,53,21,98};
+	int smallest=32767;
+	
+	for (int i=0; i<10; i++){
+		if (smallest>arr1[i]){smallest=arr1[i];}
+	}
+	
+	cout<<"Smallest number in array: "<<smallest;	
+}

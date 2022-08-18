@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+
+void properties()
+{
+	cout<<"Step1 : Take some amount of cement in a bowl and weigh it by using weight balance machine and note down the value. "<<endl<<endl;
+	cout<<"Step2 : Now put that cement in a sieve of 90micrometer sieve no#200 and shake it left to right and vice versa and farward and backward and vice versa for 15 miutes"<<endl<<endl;
+	cout<<"Step3 : After that again weigh the cement which is passed out from sieve  by using weigh balance machine and note down the value.  "<<endl<<endl;
+	cout<<"Now you have the values of total mass and retained mass.Put these values in the program and run it.The program will calculate the fineness of cement and also percentage of cement. "<<endl<<endl;
+}
+
+void check_cement();
+
+	
+int main()
+{
+	int num;
+
+cout<<"Press '1' to check properties and '2' to check cement status and '0' to finished this program"<<endl;
+	cin>>num;
+while(num!=0)
+{
+	if(num==1)
+	{
+		properties();
+	}
+	else if(num==2)
+	{
+		
+		check_cement();
+	}
+	else if(num!=0 && num!=1 && num!=2)
+	{
+		cout<<"Please enter correct option. "<<endl;
+	}
+		
+	cout<<"Press '1' to check properties and '2' to check cement status and '0' to finished this program"<<endl;
+	cin>>num;
+}	
+}
+void check_cement()
+{
+	float result;
+	float total_mass, retained_mass;
+	cout<<"To check cement status, Enter total mass in grams: "<<endl;
+		cin>>total_mass;
+		cout<<"Remember that retained mass is less than total mass. "<<endl;
+		cout<<"Enter retained mass in grams: "<<endl;
+		cin>>retained_mass;
+	result =  (((total_mass-retained_mass)*100)/total_mass);
+	cout<<result<<"%"<<endl;
+	if(result<90)
+	{
+		cout<<"Your cement is course!"<<endl;
+	}
+	else
+	{
+		cout<<"Your cement is fine! "<<endl;
+	}
+}

@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int arr1[10]={4,76,5,3,252,64,31,53,21,98};
+	int largest=-32768;
+	
+	for (int i=0; i<10; i++){
+		if (largest<arr1[i]){largest =arr1[i];}
+	}
+	
+	cout<<"Largest number in array: "<<largest;
+	
+}

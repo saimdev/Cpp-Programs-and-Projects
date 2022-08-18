@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int arr1[5000]={0};
+	int i=4000, j=0;
+	while (i<5000){
+		while (j<10){
+			cout<<arr1[i]<<"\t";
+			j++;
+		}
+		cout<<endl;
+		i++;
+		j=0;
+	}
+	
+	return 0;
+}

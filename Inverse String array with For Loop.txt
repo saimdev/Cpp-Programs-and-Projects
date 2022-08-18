@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	char arr1[10]={'a', 'g', 't', 'q', 'p', 'c', 'u', 'd', 's', 'l'};
+	
+	for (int i=9; i>=0; i--){
+		cout<<arr1[i]<<"  ";
+	}
+	
+	return 0;
+}

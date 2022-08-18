@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int arr1[10]={6,5,4,3,8,5,4,3,2,9};
+	int x, sum=0, sum_1=0, count = 0, average;
+	
+	for (int i=0; i<10; i++){
+		sum+=arr1[i];
+	}
+	
+	x = sum/10;
+	
+	for (int i=0; i<10; i++){
+		if (arr1[i]>=x){
+			sum_1+=arr1[i];
+			count+=1;
+		}
+	}
+	
+	average = sum_1/count;
+	
+	cout<<"Final average: "<<average;
+	
+	return 0;
+}
